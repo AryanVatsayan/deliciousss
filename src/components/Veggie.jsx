@@ -106,7 +106,7 @@ const Wrapper = styled.div`
    position: absolute;
    width: 100%;
    height: 100%;
-   backgorund: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+   backgorund: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5) 100%);
    `;
 
 export default Veggie

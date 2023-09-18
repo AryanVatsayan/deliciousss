@@ -70,7 +70,7 @@ function Popular() {
   `;
 
   const Card = styled.div`
-   min-height: 25rem;
+   min-height: 15rem;
    boder-radius: 2rem;
    overflow: hidden;
    position: relative;
@@ -106,5 +106,5 @@ function Popular() {
    width: 100%;
    height: 100%;
    backgorund: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-   `
+   `;
 export default Popular;
