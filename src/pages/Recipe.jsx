@@ -11,7 +11,7 @@ function Recipe() {
   const [activeTab,setActiveTab] = useState("instructions");
 
   const fetchDetails = async() => {
-    const data = await fetch(`https://api.spoonacular.com/recipe/${params.name}/information?apiKey=da7128aaaafe4370a423068314444bfb`);
+    const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=62e71394456044a0b306518fab2e71c4`);
     const detailData = await data.json();
     setDetails(detailData);
     console.log(detailData);
@@ -28,22 +28,21 @@ function Recipe() {
         <img src={details.image} alt="" />
       </div>
       <Info>
-        <Button className={activeTab == 'instructions' ? 'active' : ''} onClick ={() => setActiveTab=("instructions")}>
-        Instructions</Button>
-        <Button className={activeTab == 'ingredients' ? 'active' : ''} onClick={() => setActiveTab("ingredients")}>Ingredients</Button>
-        {activeTab==='instructions' &&(
+        <Button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab("instructions")}>Instructions</Button>
+        <Button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab("ingredients")}>Ingredients</Button>
+        {activeTab ==='instructions' &&(
         <div>
           <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
           <h3 dangerouslySetInnerHTML={{__html: details.instructions}}></h3>
         </div>
         )}
-      {activeTab === 'ingredients' &&(
+       {activeTab === 'ingredients' &&(
         <ul>
-          {details.extendedIngredients.map((ingredient) => 
-            <li key={ingredient.id}>{ingredient.original}
-            </li>)}
+          {details.extendedIngredients.map((ingredient) => (  
+            <li key={ingredient.id}>{ingredient.original}</li>
+            ))}
         </ul>
-      )};
+      )};     
       </Info>
     </DetaillWrapper>
   );

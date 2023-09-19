@@ -12,12 +12,18 @@ function Search() {
     navigate('/searched/' + input);
   };
   return (
-    <FormStyled>
-      <div>
-        <FaSearch></FaSearch>
-        <input onChange={(e) => setInput} type="text" value={input} />
-      </div>
-    </FormStyled>
+    <div>
+      <FormStyled onSubmit={submitHandler}>
+        <div>
+          <FaSearch />
+          <input
+            onChange={(e) => setInput(e.target.value)}
+            type="text"
+            value={input}
+          />
+        </div>
+      </FormStyled>
+    </div>
   );
 }
 
